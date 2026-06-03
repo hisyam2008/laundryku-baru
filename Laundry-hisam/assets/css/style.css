@@ -1,0 +1,269 @@
+/* Modern Aesthetic for Laundry Hisam */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #3b82f6; /* Blue 500 */
+    --primary-hover: #2563eb;
+    --secondary-bg: #0f172a;  /* Slate 950 */
+    --sidebar-bg: #1e293b;    /* Slate 800 */
+    --sidebar-active: #334155;
+    --text-main: #f8fafc;     /* Slate 50 (Very Clear) */
+    --text-muted: #cbd5e0;    /* Slate 300 (Brighter) */
+    --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.3);
+    --border-color: #334155;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--secondary-bg);
+    color: var(--text-main);
+}
+
+/* Sidebar Styling */
+.sidebar {
+    width: 260px;
+    height: 100vh;
+    background-color: var(--sidebar-bg);
+    border-right: 1px solid var(--border-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1040;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.hide {
+    transform: translateX(-100%);
+}
+
+.sidebar-brand {
+    padding: 24px 20px;
+    background: var(--sidebar-bg);
+    border-bottom: 1px solid var(--border-color);
+    color: var(--text-main);
+}
+
+.sidebar-nav {
+    flex: 1;
+    overflow-y: auto;
+    padding: 12px 0;
+}
+
+.sidebar-nav a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 4px 12px;
+    border-radius: 8px;
+    padding: 12px 16px;
+    color: var(--text-muted);
+    text-decoration: none;
+    font-size: 0.875rem;
+    font-weight: 500;
+    transition: all 0.2s;
+}
+
+.sidebar-nav a:hover {
+    background-color: var(--sidebar-active);
+    color: #fff;
+}
+
+.sidebar-nav a.active {
+    background-color: var(--sidebar-active) !important;
+    color: var(--primary-color) !important;
+    font-weight: 600;
+}
+
+.nav-section {
+    padding: 20px 24px 8px;
+    color: var(--text-muted);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-weight: 700;
+}
+
+/* Main Content & Topbar */
+.main-content {
+    margin-left: 260px;
+    padding: 32px;
+}
+
+.topbar {
+    background: rgba(45, 55, 72, 0.8); /* Slate 700 */
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid var(--border-color);
+    margin: -32px -32px 32px;
+    padding: 16px 32px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.topbar h6 {
+    color: #fff;
+}
+
+/* Cards & Components */
+.card {
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    background-color: #2d3748; /* Card background */
+    box-shadow: var(--card-shadow);
+    transition: transform 0.2s ease;
+}
+
+.card-header-custom {
+    background: #2d3748;
+    padding: 20px;
+    border-bottom: 1px solid var(--border-color);
+    color: #fff;
+}
+
+.card-header-custom h5 {
+    color: #fff;
+}
+
+.stat-card {
+    border-left: 0 !important;
+    position: relative;
+    overflow: hidden;
+}
+
+.stat-card .display-6 {
+    color: #fff !important;
+}
+
+.stat-card::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0; bottom: 0;
+    width: 4px;
+    background: var(--primary-color);
+}
+
+.btn-hijau {
+    background: linear-gradient(135deg, #63b3ed 0%, #3182ce 100%);
+    color: #fff;
+    border-radius: 8px;
+    padding: 8px 16px;
+    font-weight: 600;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-hijau:hover {
+    background: linear-gradient(135deg, #3182ce 0%, #2b6cb0 100%);
+    color: #fff;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(66, 153, 225, 0.3);
+}
+
+/* Tables */
+.sidebar-brand {
+    padding: 24px 20px;
+    background: var(--sidebar-bg);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.brand-title {
+    color: #fff;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 4px;
+}
+
+/* Ensure Table Rows are Dark */
+.table {
+    color: var(--text-main) !important;
+}
+
+.table tr {
+    background-color: var(--sidebar-bg) !important;
+}
+
+.table td, .table th {
+    border-color: var(--border-color) !important;
+    background: transparent !important;
+    color: inherit !important;
+}
+
+.table thead th {
+    background-color: var(--secondary-bg) !important;
+    color: #cbd5e0 !important;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.table-hover tbody tr:hover {
+    background-color: var(--sidebar-active) !important;
+}
+
+.stat-card {
+    background-color: var(--sidebar-bg) !important;
+}
+
+.card {
+    background-color: var(--sidebar-bg) !important;
+    color: var(--text-main) !important;
+}
+
+.card-header-custom {
+    background-color: var(--sidebar-bg) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+}
+
+.brand-role {
+    font-size: 0.7rem;
+    padding: 4px 10px;
+    border-radius: 4px; /* Squared */
+}
+
+.btn-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: var(--text-main);
+    padding: 0;
+}
+
+/* Custom Alerts for Dark Mode */
+.alert {
+    background-color: #334155;
+    border: 1px solid var(--border-color);
+    color: #fff;
+    border-radius: 8px;
+}
+
+.alert-success {
+    background-color: rgba(16, 185, 129, 0.1);
+    border-color: rgba(16, 185, 129, 0.2);
+    color: #10b981;
+}
+
+.alert-danger {
+    background-color: rgba(239, 68, 68, 0.1);
+    border-color: rgba(239, 68, 68, 0.2);
+    color: #ef4444;
+}
+
+.btn-close {
+    filter: invert(1) grayscale(100%) brightness(200%);
+}
+
+.badge {
+    border-radius: 4px !important; /* Square look */
+    font-weight: 500;
+}
+
+@media (max-width: 768px) {
+    .sidebar { transform: translateX(-100%); }
+    .sidebar.show { transform: translateX(0); }
+    .main-content { margin-left: 0; padding: 20px; }
+    .topbar { margin: -20px -20px 20px; padding: 12px 20px; }
+    .btn-toggle { display: block; }
+}
